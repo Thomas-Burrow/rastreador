@@ -1,9 +1,9 @@
 name:    rastreador
-version: "0.0.0"
+version: "0.1.0"
 
 dependencies:
 
-- base >=4.9.1.0 && <5
+- base >=4.9.1.0 && <5 #Versões decidas pelo template yesodweb/sqlite
 - yesod >=1.6 && <1.7
 - yesod-core >=1.6 && <1.7
 - yesod-auth >=1.6 && <1.7
@@ -42,12 +42,12 @@ dependencies:
 - case-insensitive
 - wai
 - foreign-store
-- blaze-markup
-- qrcode-core <1
-- qrcode-juicypixels #usado para gerar e mostrar qrcodes
-- microlens
-- hspec
-- yesod-test
+- blaze-markup       #usado para gerar html
+- qrcode-core <1     #usado para gerar e mostrar qrcodes
+- qrcode-juicypixels #
+- microlens  #usados nos testes automaticos, importando aqui faz reclamação do HaskellLanguageServer cessar
+- hspec      #
+- yesod-test #
 
 # The library contains all of our application code. The executable
 # defined below is just a thin wrapper.
