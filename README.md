@@ -8,4 +8,4 @@ Um protótipo criado para atender requerimentos de um trabalho em grupo que prop
 
 
 ## Para saber mais
-Cheque DEFAULT-README.md para ver a documentação que foi automaticamente gerada pelo scaffold e TODOS.md para ver os planos futuros.
+Cheque DEFAULT-README.md para ver a documentação que foi automaticamente gerada pelo scaffold e TODO.md para ver os planos futuros.
