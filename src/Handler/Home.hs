@@ -24,6 +24,6 @@ getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
         aDomId <- newIdent
-        setTitle "Menu"
+        setTitle "Página Inicial"
         $(widgetFile "homepage")
 
