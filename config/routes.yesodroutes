@@ -11,6 +11,8 @@
 /ordem OrdemR GET POST
 /qrcode/#Int64 QrcodeR GET
 
+/dash DashR GET
+
 /scan/#Int64 ScanR GET POST
 
 

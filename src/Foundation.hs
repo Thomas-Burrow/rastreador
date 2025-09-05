@@ -121,6 +121,11 @@ instance Yesod App where
                     , menuItemRoute = OrdemR
                     , menuItemAccessCallback = True
                     }
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Dashboard"
+                    , menuItemRoute = DashR
+                    , menuItemAccessCallback = True
+                    }
                 {- Ainda não
                 , NavbarRight $ MenuItem
                     { menuItemLabel = "Login"
@@ -176,7 +181,7 @@ instance Yesod App where
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function
     --isAuthorized ProfileR _ = isAuthenticated
-
+    isAuthorized DashR _ = return Authorized
     isAuthorized (ScanR _) _ = return Authorized
     isAuthorized OrdemR _ = return Authorized
 
@@ -228,6 +233,8 @@ instance YesodBreadcrumbs App where
     breadcrumb (AuthR _) = return ("Login", Just HomeR)
     breadcrumb OrdemR = return ("Criar ordem",  Just HomeR)
     breadcrumb (QrcodeR _)= return ("QR code",  Just OrdemR)
+    breadcrumb (ScanR _) = return ("Dados do Veiculo",  Just HomeR)
+    breadcrumb DashR = return ("Dashboard",  Just HomeR)
     breadcrumb  _ = return ("home", Nothing)
 
 -- How to run database actions.

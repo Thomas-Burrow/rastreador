@@ -1,0 +1,11 @@
+<deiv .grid>
+    $if null veiculos
+        <span>
+            Sem veículos não marcados como retirados no sistema.
+    $else
+            $forall Entity key v <- veiculos
+                <div .grid-elem>
+                    <a .dash-placa href=@{ScanR (fromSqlKey key)}>
+                        #{ordemServicoPlaca v}
+                    <p>
+                        Atualmente: #{ordemStatusToText (ordemServicoStatus v)}
