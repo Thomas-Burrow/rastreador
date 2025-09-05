@@ -1,0 +1,41 @@
+<form method=post action=@{ScanR ordemID} enctype=#{formEnctype}>
+    ^{formWidget}
+    <span>
+        Veículo com placa #{placa} entre operações
+
+    <div .checkin>
+        <div .oficina .flex-elem>
+            $if oficinaVisivel
+                <span .bad>
+                    Aguardando oficina
+                <input .btn.btn-primary name="checkinOficina" type="submit" value="Checkin oficina">
+                    
+            $else
+                <span .ok>
+                    Oficina Completa
+                <input .btn.low-priority name="corrigirOficina" type="submit" value="Marcar como incompleto">
+        <div .teste .flex-elem>
+            $if testeVisivel
+                <span .bad>
+                    Aguardando teste
+
+                <input .btn.btn-primary name="checkinTeste" type="submit" value="Checkin testagem">
+            $else
+                <span .ok>
+                    Teste Completo
+                <input .btn.low-priority name="corrigirTeste" type="submit" value="Marcar como incompleto">
+        <div .lavagem .flex-elem>
+            $if lavagemVisivel
+                <span .bad>
+                    Aguardando lavagem
+                <input .btn.btn-primary name="checkinLavagem" type="submit" value="Checkin lavagem">
+            $else
+                <span .ok>
+                    Lavagem Completa
+                <input .btn.low-priority name="corrigirLavagem" type="submit" value="Marcar como incompleto">
+                    
+
+        $if concluirPossivel
+            <div .completo .flex-elem>
+                <input .btn.btn-primary name="concluir" type="submit" value="Marcar carro como pronto para retirada">
+                    

@@ -1,0 +1,6 @@
+<form method=post action=@{ScanR ordemID} enctype=#{formEnctype}>
+    ^{formWidget}
+        <div #(tipo)>
+            Veículo com placa #{placa} atualmente em #{ordemStatusToText statusAtual} 
+            <input .btn.btn-primary type="submit" name="checkout" value="Checkout de #{ordemStatusToText statusAtual}">
+            

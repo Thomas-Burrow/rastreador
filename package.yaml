@@ -42,8 +42,12 @@ dependencies:
 - case-insensitive
 - wai
 - foreign-store
+- blaze-markup
 - qrcode-core <1
 - qrcode-juicypixels #usado para gerar e mostrar qrcodes
+- microlens
+- hspec
+- yesod-test
 
 # The library contains all of our application code. The executable
 # defined below is just a thin wrapper.

@@ -1,0 +1,8 @@
+<div .print>
+    <div .info>
+         Ordem de serviço para #{placa}
+    <div .qrcode>
+        $maybe codeParaPlaca <- mcodeParaPlaca
+            <img src=#{codeParaPlaca}>
+        $nothing
+            Erro gerando QR code.

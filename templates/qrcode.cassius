@@ -1,0 +1,9 @@
+@media print 
+    nav, .breadcrumb, .footer
+        display: none !important;
+    .print
+        display: block !important;
+
+.print
+    text-align: center;
+  

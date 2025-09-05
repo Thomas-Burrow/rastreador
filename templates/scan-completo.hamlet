@@ -1,0 +1,6 @@
+<form method=post action=@{ScanR ordemID} enctype=#{formEnctype}>
+    ^{formWidget}
+    <div .completo>
+        Veículo com placa #{placa} marcado como completo
+        <input .btn.btn-primary .btn-completo type="submit" name="retirar" value="Marcar como retirado">
+            

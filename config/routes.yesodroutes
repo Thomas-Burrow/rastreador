@@ -7,8 +7,11 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ HomeR GET POST
+/ HomeR GET
+/ordem OrdemR GET POST
+/qrcode/#Int64 QrcodeR GET
 
-/comments CommentR POST
+/scan/#Int64 ScanR GET POST
 
-/profile ProfileR GET
+
+

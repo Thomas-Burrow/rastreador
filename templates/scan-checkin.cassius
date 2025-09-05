@@ -1,0 +1,9 @@
+.checkin
+    flex-direction: row
+    display: flex
+
+.flex-elem
+    margin-right: 1em
+    margin-left: 1em
+
+        

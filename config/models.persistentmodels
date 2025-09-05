@@ -1,6 +1,15 @@
 -- By default this file is used by `persistFileWith` in Model.hs (which is imported by Foundation.hs)
 -- Syntax for this file here: https://github.com/yesodweb/persistent/blob/master/docs/Persistent-entity-syntax.md
 
+
+OrdemServico
+    placa Text --não unica, podem ter varias ordem de serviço para uma placa
+    oficinaCompleta Bool -- Usado para rastrear quais etapas foram realizadas
+    testeCompleto Bool -- idem
+    lavagemCompleta Bool -- idem
+    status StatusVeicular -- Onde estamos agora?
+    deriving Show
+
 User
     ident Text
     password Text Maybe
@@ -11,8 +20,3 @@ Email
     userId UserId Maybe
     verkey Text Maybe
     UniqueEmail email
-Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived.
-    message Text
-    userId UserId Maybe
-    deriving Eq
-    deriving Show
