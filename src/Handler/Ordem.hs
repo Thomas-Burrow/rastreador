@@ -14,7 +14,6 @@ import Yesod.Form.Bootstrap3
 import Status
 
 import Database.Persist.Sql (toSqlKey, fromSqlKey)
-import Model
 
 -- | Utilizado para receber o form de pagina de ordens
 -- | provavelmente vai ser expandido no futuro
@@ -25,9 +24,10 @@ data OrdemData = OrdemData
 
 ordemForm :: Form OrdemData
 ordemForm = renderBootstrap3 BootstrapBasicForm $ OrdemData
-    <$> areq textField textSettings Nothing
+    <$> areq textPlacaField textSettings Nothing
     -- Add attributes like the placeholder and CSS classes.
-    where textSettings = FieldSettings
+    where 
+        textSettings = FieldSettings
             { fsLabel = "Placa do veículo"
             , fsTooltip = Nothing
             , fsId = Just "placaField"
@@ -37,6 +37,13 @@ ordemForm = renderBootstrap3 BootstrapBasicForm $ OrdemData
                 , ("placeholder", "XYZ-1234")
                 ]
             }
+        textPlacaField = check validatePlaca textField
+        erroMsg :: Text
+        erroMsg = "Placa Invalida"
+        validatePlaca s
+            | length s < 10 = Left erroMsg
+            | otherwise = Right s
+
 
 getOrdemR :: Handler Html
 getOrdemR = do
