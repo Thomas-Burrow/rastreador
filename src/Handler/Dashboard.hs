@@ -20,5 +20,5 @@ getDashR :: Handler Html
 getDashR = do
     veiculos <- runDB $ selectList [OrdemServicoStatus !=. Retirado ] []
     defaultLayout $ do
-        setTitle "Menu"
+        setTitle "Visão Geral"
         $(widgetFile "dashboard")
